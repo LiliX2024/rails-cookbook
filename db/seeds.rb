@@ -7,3 +7,5 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+recipe1 = Recipe.create(name: "Spaghetti Carbonara", description: "Delicious", rating: 7.5)
+recipe2 = Recipe.create(name: "Spaghetti Carbonara", description: "Another recipe", rating: 11)  # Should fail (name not unique, rating too high)
