@@ -1,0 +1,7 @@
+Add recipe to <%= @category.name %>
+<%= simple_form_for [@category, @bookmark], local: true do |f| %>
+<%= f.input :recipe_id, collection: @recipes, label: "select a Recipe" %>
+<%= f.input :comments, label: "comments", placeholder: "Add a comment", input_html: { maxlength: 200 } %>
+<%= f.button :submit, "Add Recipe" %>
+<% end %>
+<%= link_to "Back to Category", category_path(@category) %>

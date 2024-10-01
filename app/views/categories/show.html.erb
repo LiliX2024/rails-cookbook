@@ -1,0 +1,14 @@
+Category show page
+<ul><%= @category.name %>
+<% @category.bookmarks.each do |bookmark| %>
+<li>
+<%= bookmark.recipe.name %>
+<%# <% @bookmark = recipe.bookmarks.select { |bookmark| bookmark.category_id == @category.id }  %>
+
+<%= link_to "Delete", bookmark_path(bookmark), data: { turbo_method: :delete, turbo_confirm: 'Are you sure you want to delete this recipe from the category?' } %>
+</li>
+<% end %>
+</ul>
+
+<%= link_to "Bookmark Recipe", new_category_bookmark_path(@category) %>
+<%= link_to "All categories", categories_path %>

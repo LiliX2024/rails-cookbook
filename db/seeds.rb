@@ -7,14 +7,8 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-Category.destroy_all
 Recipe.destroy_all
-Bookmark.destroy_all
 
-italian = Category.create(name: "Italian")
-chinese = Category.create(name: "Chinese")
-japanese = Category.create(name: "Japanese")
-mexican = Category.create(name: "Mexican")
 
 recipe1 = Recipe.create(
   name: "Spaghetti Carbonara",
@@ -43,8 +37,3 @@ recipe4 = Recipe.create(
   image_url: "https://example.com/tacos.jpg",
   rating: 8.0
 )
-
-Bookmark.create(recipe_id: recipe1.id, category_id: italian.id, comments: "Classic Italian pasta dish.")
-Bookmark.create(recipe_id: recipe2.id, category_id: chinese.id, comments: "A spicy and flavorful dish from Sichuan cuisine.")
-Bookmark.create(recipe_id: recipe3.id, category_id: japanese.id, comments: "Traditional Japanese sushi.")
-Bookmark.create(recipe_id: recipe4.id, category_id: mexican.id, comments: "Delicious Mexican tacos.")
